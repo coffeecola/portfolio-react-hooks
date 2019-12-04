@@ -1,0 +1,24 @@
+.header.jumbotron {
+  background-image: linear-gradient(to right, #396ab3, #c352de);
+  border-radius: 0;
+  margin-bottom: 0;
+  background-color: none;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.repo__link {
+  color: #4069b5;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.contributer__link {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
