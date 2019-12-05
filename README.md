@@ -11,6 +11,9 @@ Requirements:
 - List contributors ordered by the number of contributions per contributor in descending order
 - Use Github REST API
 
+Heroku link:
+https://portfolio-github.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
