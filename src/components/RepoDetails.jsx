@@ -1,6 +1,8 @@
 import React from "react";
 
 const RepoDetails = ({ repo }) => {
+  console.log("RepoDetails");
+  console.log(repo);
   return (
     <div className="border-bottom  py-4">
       <a href={repo.repoUrl} className="mb-0 repo__link">

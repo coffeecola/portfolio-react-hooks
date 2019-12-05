@@ -21,6 +21,7 @@ const SearchInput = () => {
               <span className="ml-3">Username</span>
             </span>
             <input
+              name="search"
               type="text"
               value={searchQuery}
               onChange={e => {

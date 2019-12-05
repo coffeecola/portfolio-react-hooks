@@ -38,13 +38,14 @@ export const getRepos = async userName => {
     `https://api.github.com/users/${userName}/repos`
   );
 
+  console.log(data);
   return {
     error,
     repos: await Promise.all(
-      data.map(({ contributors_url, full_name, url, id }) =>
+      data.map(({ contributors_url, full_name, html_url, id }) =>
         getAllGithubResults(contributors_url).then(allContributors => ({
           name: full_name,
-          repoUrl: url,
+          repoUrl: html_url,
           id: id,
           contributors: allContributors.data
             .map(({ contributions, html_url, login, avatar_url, id }) => ({
