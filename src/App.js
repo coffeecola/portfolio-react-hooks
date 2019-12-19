@@ -7,9 +7,9 @@ import "./App.scss";
 function App() {
   return (
     <div className="App">
-      <header className="header jumbotron">
+      <header className="header">
         <div className="container">
-          <h1 className="text-white display-3">Github Repo</h1>
+          <h1 className="header__title">Github Repo</h1>
         </div>
       </header>
       <SearchContextProvider>

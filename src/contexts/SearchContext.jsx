@@ -8,17 +8,18 @@ const SearchContextProvider = props => {
   const [errors, setErrors] = useState([]);
   const [repos, setRepos] = useState([]);
   const [loading, setLoading] = useState(false);
+
   const handleSearchChange = e => {
     setSearchQuery(e.target.value);
   };
 
   const handleSearchSubmit = async () => {
     setLoading(true);
+    setSearchQuery("");
     const { repos, error } = await getRepos(searchQuery);
     setRepos(repos);
     setErrors(error);
     setLoading(false);
-    setSearchQuery("");
   };
 
   return (

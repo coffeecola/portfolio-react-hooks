@@ -6,11 +6,11 @@ const RepoList = () => {
   const { repos, loading, errors } = useContext(SearchContext);
 
   return (
-    <section className="container repo-list">
-      {errors ? <p className="mt-3">{errors.message}</p> : ""}
+    <section className="container section-repolist">
+      {errors ? <p className="u-margin-bottom-small">{errors.message}</p> : ""}
 
       {loading ? (
-        <p className="mt-3">Loading...</p>
+        <p className="u-margin-bottom-small">Loading...</p>
       ) : (
         repos.map(repo => <RepoDetails key={repo.id} repo={repo} />)
       )}

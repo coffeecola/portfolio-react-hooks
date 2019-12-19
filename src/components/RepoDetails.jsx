@@ -1,19 +1,20 @@
 import React from "react";
 
 const RepoDetails = ({ repo }) => {
-  console.log("RepoDetails");
-  console.log(repo);
   return (
-    <div className="border-bottom  py-4">
-      <a href={repo.repoUrl} className="mb-0 repo__link">
-        {repo.name}
+    <div className="repo-details">
+      <a href={repo.repoUrl} className="repo-details__repo-link">
+        {repo.name} &#128540;
       </a>
-      <ul className="mb-0">
+      <ul className="repo-details__list">
         {repo.contributors.length ? (
           <React.Fragment>
             {repo.contributors.map((contributor, i) => (
               <li key={i}>
-                <a className="contributer__link" href={contributor.html_url}>
+                <a
+                  className="repo-details__contributer-link"
+                  href={contributor.html_url}
+                >
                   <span>#{i + 1} - </span>
                   {`${contributor.login} (${contributor.contributions} commits)`}
                 </a>

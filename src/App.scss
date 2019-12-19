@@ -1,24 +1,117 @@
-.header.jumbotron {
-  background-image: linear-gradient(to right, #396ab3, #c352de);
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%; //1rem == 10px; 10px/16px 62.5%
+}
+
+$primary-color: #c352de;
+$primary-color-darken: darken(#c352de, 10%);
+$secondary-color: #396ab3;
+$secondary-color-darken: darken(#396ab3, 10%);
+
+$light-gray: #f8f9fa;
+
+.header {
+  height: 20rem;
+  background-image: linear-gradient(to right, $secondary-color, $primary-color);
   border-radius: 0;
-  margin-bottom: 0;
-  background-color: none;
-}
+  position: relative;
 
-ul {
-  list-style-type: none;
-}
-
-.repo__link {
-  color: #4069b5;
-  &:hover {
-    text-decoration: none;
+  &__title {
+    color: $light-gray;
+    font-size: 6rem;
+    font-weight: 300;
+    position: absolute;
+    bottom: 3.5rem;
   }
 }
 
-.contributer__link {
-  color: black;
-  &:hover {
-    text-decoration: none;
+.search {
+  padding: 2rem 0;
+  font-size: 1.5rem;
+
+  background-color: $light-gray;
+  &__form {
+    display: flex;
+  }
+
+  &__icon-container {
+    display: flex;
+    align-items: center;
+    margin-right: 3rem;
+  }
+
+  &__label-text {
+    margin-left: 3rem;
+  }
+
+  &__input {
+    display: block;
+    width: 40%;
+    height: calc(1.5em + 0.75rem + 2px);
+    padding: 0.375rem 0.75rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.3rem;
+    transition: border-color 0.35s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    &:active,
+    &:focus {
+      outline-color: $primary-color;
+    }
   }
 }
+
+.section-repolist {
+  font-size: 1.5rem;
+  .repo-details {
+    padding: 1.5rem 0;
+
+    &:not(:last-child) {
+      border-bottom: 1px solid $secondary-color;
+    }
+
+    &__repo-link,
+    &__contributer-link {
+      text-transform: capitalize;
+
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    &__contributer-link {
+      color: $secondary-color;
+      &:hover {
+        color: $secondary-color-darken;
+      }
+    }
+    &__repo-link {
+      color: $primary-color;
+      &:hover {
+        color: $primary-color-darken;
+      }
+    }
+
+    ul {
+      list-style: none;
+    }
+  }
+}
+
+.u-margin-bottom-small {
+  margin-bottom: 1.5rem;
+}
+
+// ul {
+//   list-style-type: none;
+// }
